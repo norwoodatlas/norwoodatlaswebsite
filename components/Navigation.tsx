@@ -15,7 +15,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <nav className="bg-white border-b border-gray-200">
       <div className="container-custom">
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-col items-center py-6">
