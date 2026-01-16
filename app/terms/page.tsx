@@ -121,7 +121,7 @@ export default function TermsPage() {
             If you have questions about these Terms of Service, please contact us at:
           </p>
           <p className="text-gray-700">
-            <strong>Email:</strong> <a href="mailto:legal@norwoodatlas.com" className="text-primary-600 hover:text-primary-700">legal@norwoodatlas.com</a>
+            <strong>Email:</strong> <a href="mailto:NorwoodAtlas@gmail.com" className="text-primary-600 hover:text-primary-700">NorwoodAtlas@gmail.com</a>
           </p>
         </div>
       </div>

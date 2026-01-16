@@ -38,10 +38,10 @@ export default function SupportPage() {
                   For general support inquiries, technical questions, or assistance with existing projects.
                 </p>
                 <a
-                  href="mailto:support@norwoodatlas.com"
+                  href="mailto:NorwoodAtlas@gmail.com"
                   className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2"
                 >
-                  support@norwoodatlas.com
+                  NorwoodAtlas@gmail.com
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -60,10 +60,10 @@ export default function SupportPage() {
                   Ready to start a project? Want to discuss partnership opportunities? Let's talk.
                 </p>
                 <a
-                  href="mailto:hello@norwoodatlas.com"
+                  href="mailto:NorwoodAtlas@gmail.com"
                   className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2"
                 >
-                  hello@norwoodatlas.com
+                  NorwoodAtlas@gmail.com
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -82,10 +82,10 @@ export default function SupportPage() {
                   For all other questions, feedback, or just to say hello.
                 </p>
                 <a
-                  href="mailto:info@norwoodatlas.com"
+                  href="mailto:NorwoodAtlas@gmail.com"
                   className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2"
                 >
-                  info@norwoodatlas.com
+                  NorwoodAtlas@gmail.com
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -142,14 +142,14 @@ export default function SupportPage() {
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Can you help with emergency issues?</h3>
                 <p className="text-gray-600">
-                  Current clients with active support agreements have access to priority support channels for urgent issues. Contact us at support@norwoodatlas.com with "URGENT" in the subject line.
+                  Current clients with active support agreements have access to priority support channels for urgent issues. Contact us at NorwoodAtlas@gmail.com with "URGENT" in the subject line.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">How do I get started on a new project?</h3>
                 <p className="text-gray-600">
-                  The best way to start is by reaching out via our contact form or emailing hello@norwoodatlas.com. We'll schedule a call to discuss your project and next steps.
+                  The best way to start is by reaching out via our contact form or emailing NorwoodAtlas@gmail.com. We'll schedule a call to discuss your project and next steps.
                 </p>
               </div>
             </div>

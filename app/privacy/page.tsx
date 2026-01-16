@@ -114,7 +114,7 @@ export default function PrivacyPage() {
             If you have questions about this Privacy Policy or our data practices, please contact us at:
           </p>
           <p className="text-gray-700">
-            <strong>Email:</strong> <a href="mailto:privacy@norwoodatlas.com" className="text-primary-600 hover:text-primary-700">privacy@norwoodatlas.com</a>
+            <strong>Email:</strong> <a href="mailto:NorwoodAtlas@gmail.com" className="text-primary-600 hover:text-primary-700">NorwoodAtlas@gmail.com</a>
           </p>
         </div>
       </div>

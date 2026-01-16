@@ -1,36 +1,11 @@
-'use client'
-
 import { Metadata } from 'next'
-import { useState } from 'react'
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Get in touch with Norwood Atlas. Contact us for project inquiries, questions, or to discuss how we can help you build and launch your product.',
+}
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setFormState('submitting')
-
-    const form = e.currentTarget
-    const formData = new FormData(form)
-
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      })
-
-      if (response.ok) {
-        setFormState('success')
-        form.reset()
-      } else {
-        setFormState('error')
-      }
-    } catch (error) {
-      setFormState('error')
-    }
-  }
-
   return (
     <>
       {/* Hero */}
@@ -45,135 +20,90 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Contact Information */}
       <section className="pb-24">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
-              {/* Hidden fields for Netlify */}
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don't fill this out if you're human: <input name="bot-field" />
-                </label>
-              </p>
-
-              {/* Name */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              {/* Company */}
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  placeholder="Your company name"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div>
-                <button
-                  type="submit"
-                  disabled={formState === 'submitting'}
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+            {/* Main Contact Card */}
+            <div className="p-12 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl border border-primary-200 mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Email Us</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  Send us an email and we'll get back to you within 24-48 hours.
+                </p>
+                <a
+                  href="mailto:NorwoodAtlas@gmail.com"
+                  className="inline-flex items-center gap-2 text-2xl font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                 >
-                  {formState === 'submitting' ? 'Sending...' : 'Send Message'}
-                </button>
+                  NorwoodAtlas@gmail.com
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
               </div>
+            </div>
 
-              {/* Success Message */}
-              {formState === 'success' && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-800 text-center">
-                    Thank you for your message! We'll get back to you soon.
-                  </p>
-                </div>
-              )}
+            {/* What to Include */}
+            <div className="bg-white p-8 rounded-lg border border-gray-200 mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">What to include in your message:</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Your name and company (if applicable)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>A brief description of your project or question</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Your timeline and any relevant details</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Best way to reach you (if different from sender address)</span>
+                </li>
+              </ul>
+            </div>
 
-              {/* Error Message */}
-              {formState === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-800 text-center">
-                    Something went wrong. Please try again or email us directly at{' '}
-                    <a href="mailto:hello@norwoodatlas.com" className="underline">
-                      hello@norwoodatlas.com
-                    </a>
-                  </p>
-                </div>
-              )}
-            </form>
+            {/* Response Time */}
+            <div className="bg-secondary-50 border border-secondary-200 rounded-lg p-6 text-center">
+              <p className="text-gray-700">
+                <strong>Response Time:</strong> We typically respond within 24-48 hours during business days. For urgent matters, please include "URGENT" in your subject line.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Alternative Contact */}
-            <div className="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200">
-              <h2 className="text-lg font-bold text-gray-900 mb-4">Other ways to reach us</h2>
-              <div className="space-y-2 text-gray-600">
-                <p>
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:hello@norwoodatlas.com" className="text-primary-600 hover:text-primary-700">
-                    hello@norwoodatlas.com
-                  </a>
-                </p>
-                <p>
-                  <strong>General inquiries:</strong>{' '}
-                  <a href="mailto:info@norwoodatlas.com" className="text-primary-600 hover:text-primary-700">
-                    info@norwoodatlas.com
-                  </a>
-                </p>
-              </div>
+      {/* Alternative Contact */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Other Ways to Connect</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Looking for support or general information?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/support" className="btn-secondary inline-block">
+                Visit Support
+              </a>
+              <a href="/about" className="btn-secondary inline-block">
+                Learn About Us
+              </a>
             </div>
           </div>
         </div>

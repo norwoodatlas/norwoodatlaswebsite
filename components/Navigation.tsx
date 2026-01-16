@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Navigation() {
@@ -18,7 +19,14 @@ export default function Navigation() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/logo.png"
+              alt="Norwood Atlas"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
             <span className="text-xl font-bold text-gray-900">Norwood Atlas</span>
           </Link>
 
