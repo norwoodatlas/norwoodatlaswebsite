@@ -17,26 +17,27 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex flex-col items-center py-6">
+          {/* Logo - Centered and Large */}
+          <Link href="/" className="flex flex-col items-center mb-6">
             <Image
               src="/logo.png"
               alt="Norwood Atlas"
-              width={40}
-              height={40}
-              className="w-10 h-10"
+              width={120}
+              height={120}
+              className="w-28 h-28 mb-3"
             />
-            <span className="text-xl font-bold text-gray-900">Norwood Atlas</span>
+            <span className="text-2xl font-bold text-gray-900">Norwood Atlas</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation Links - Below Logo */}
+          <div className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
               >
                 {link.label}
               </Link>
@@ -45,11 +46,26 @@ export default function Navigation() {
               Contact Us
             </Link>
           </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex items-center justify-between py-4">
+          {/* Logo - Smaller on Mobile */}
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/logo.png"
+              alt="Norwood Atlas"
+              width={50}
+              height={50}
+              className="w-12 h-12"
+            />
+            <span className="text-lg font-bold text-gray-900">Norwood Atlas</span>
+          </Link>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
